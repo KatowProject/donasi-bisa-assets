@@ -2,6 +2,7 @@ import express, { Express, NextFunction, Request, Response } from 'express';
 import fs from 'fs';
 import multer from 'multer';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ const upload = multer({
 });
 
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 
